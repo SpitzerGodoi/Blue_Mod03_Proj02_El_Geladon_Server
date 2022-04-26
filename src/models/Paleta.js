@@ -1,22 +1,21 @@
-const { default: mongoose } = require('mongoose');
-const mogoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const PaletaSchema = new mongoose.Schema({
   sabor: {
     type: String,
-    require: true,
+    required: true,
   },
   descricao: {
     type: String,
-    require: true,
+    required: true,
   },
   foto: {
     type: String,
-    require: true,
+    required: true,
   },
   preco: {
     type: Number,
-    require: true,
+    required: true,
   },
 });
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectToDatabase = () => {
+const connectToDatabase = async () => {
   mongoose
     .connect('mongodb://localhost:27017/paletas-db', {
       useNewUrlParser: true,
