@@ -8,7 +8,6 @@ const validId = (req, res, next) => {
   next();
 };
 
-
 const validObjectBody = (req, res, next) => {
   const paleta = req.body;
   if (
@@ -25,7 +24,21 @@ const validObjectBody = (req, res, next) => {
   next();
 };
 
+const validObjectBodyCarrinho = (req, res, next) => {
+  const carrinho = req.body;
+
+  carrinho.forEach((item) => {
+    if (!item || !item.paletaId || !item.quantidade) {
+      return res.status(400).send({
+        mensagem: 'Você não preencheu todos os campos!',
+      });
+    }
+  });
+  next();
+};
+
 module.exports = {
   validId,
   validObjectBody,
+  validObjectBodyCarrinho,
 };
